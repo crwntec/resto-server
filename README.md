@@ -1,5 +1,5 @@
 
-![resto](https://github.com/crwntec/resto-server/assets/77750176/39f88b81-206f-42c0-9b47-0d5bd21e7dfb)
+![resto](https://github.com/crwntec/resto-server/assets/77750176/abc17d1b-3087-48f0-a0db-f84df086be88)
 # Resto Server
 
 Welcome to the "Resto Server," a crucial component of the Resto project—an open-source restaurant manager designed to efficiently manage tables and orders. This server is responsible for handling requests and managing the backend data for the entire Resto ecosystem.
