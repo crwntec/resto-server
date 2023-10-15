@@ -1,6 +1,5 @@
 # Resto Server
 
-![Resto Logo](https://svgshare.com/s/y_P)
 
 Welcome to the "Resto Server," a crucial component of the Resto project—an open-source restaurant manager designed to efficiently manage tables and orders. This server is responsible for handling requests and managing the backend data for the entire Resto ecosystem.
 
