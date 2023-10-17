@@ -4,11 +4,18 @@ CREATE TABLE IF NOT EXISTS USERS(
     pin char(4) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS ORDERS(
-    id serial PRIMARY KEY,
-    table_id integer,
-    items jsonb
+CREATE TABLE IF NOT EXISTS ORDERS (
+  id serial PRIMARY KEY,
+  table_id integer,
+  item_ids jsonb
 );
+
+CREATE TABLE IF NOT EXISTS ITEMS (
+  id serial PRIMARY KEY,
+  name varchar(255) NOT NULL,
+  price numeric(10, 2) NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS TABLES(
     id integer PRIMARY KEY,
     occupied boolean,
