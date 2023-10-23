@@ -11,11 +11,11 @@ async function deleteTable(req, res) {
 
 async function updateTable(req, res) {
   try {
-    const { occupied, orderId } = req.body
+    const { occupied, orderId, location } = req.body
     const orderIDVal = orderId === undefined ? null : orderId
     const query = {
-      text: "UPDATE TABLES SET occupied = COALESCE($1,occupied), order_id = COALESCE($2,order_id) WHERE id = $3 RETURNING *",
-      values: [occupied, orderIDVal, req.params.id],
+      text: "UPDATE TABLES SET occupied = COALESCE($1,occupied), order_id =$2, location=COALESCE($3,location) WHERE id = $4 RETURNING *",
+      values: [occupied, orderIDVal, location, req.params.id],
     };
     const rows = await queryDB(query);
     res.send(rows);
@@ -28,8 +28,8 @@ async function updateTable(req, res) {
 async function addTable(req, res) {
   try {
     const query = {
-      text: "INSERT INTO TABLES (id, occupied, order_id) VALUES ($1, false, NULL) RETURNING *",
-      values: [req.body.id],
+      text: "INSERT INTO TABLES (id, occupied, order_id, location) VALUES ($1, false, NULL, $2) RETURNING *",
+      values: [req.body.id, req.body.location],
     };
     const rows = await queryDB(query);
     res.send(rows);

@@ -25,12 +25,12 @@ async function updateItem(req, res) {
 }
 
 async function addItem(req, res) {
-  const { itemName, itemPrice } = req.body;
+  const { name, price } = req.body;
   console.log(req.body);
   try {
     const query = {
       text: "INSERT INTO ITEMS (name, price) VALUES ($1, $2) RETURNING *",
-      values: [itemName, itemPrice],
+      values: [name, price],
     };
     const rows = await queryDB(query);
     res.send(rows);

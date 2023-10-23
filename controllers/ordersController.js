@@ -33,8 +33,7 @@ async function updateOrder(req, res) {
 }
 
 async function addOrder(req, res) {
-  const { table_id, item_ids, orderId } = req.body;
-  console.log(req.body);
+  const { table_id, item_ids, orderId } = req.body;;
   try {
     const query = {
       text: "INSERT INTO ORDERS (id, table_id, item_ids) VALUES ($1, $2, $3) RETURNING *",

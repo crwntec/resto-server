@@ -12,6 +12,7 @@ client.connect((err, cl) => {
 async function queryDB(query, values) {
   try {
     const result = await client.query(query, values);
+    console.log(result.rows)
     return result.rows;
   } catch (error) {
     console.error(error)
